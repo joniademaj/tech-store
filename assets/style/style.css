@@ -15,8 +15,10 @@ nav{
     width: 100%;
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid lightgray;
     padding: 10px;
+}
+.first-nav{
+    border-bottom: 1px solid lightgray;
 }
 nav ul {
     display: flex;
@@ -39,20 +41,17 @@ nav ul li a{
 }
 .logo img{
     max-width: 100px;
-    border-right: 1px solid lightgray;
 }
 .second-header{
     display: flex;
     align-items: center;
     width: 100%;
     box-shadow: 0px 9px 4px -6px rgba(0,0,0,0.1);
-    /* border-bottom: 1px solid lightgray; */
     font-family: 'Source Sans Pro', sans-serif;
 }
 .second-nav ul{
     display: flex;
     list-style-type: none;
-    border-right: 1px solid lightgray;
     height: 100px;
     align-items: center;
     padding: 10px;
@@ -79,7 +78,6 @@ nav ul li a{
     width: 100px;
     height: 100px;
     padding: 10px;
-    border-left: 1px solid lightgray;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -784,7 +782,6 @@ main{
         justify-content: space-around;
         width: 100%;
         box-shadow: 0px 9px 4px -6px rgba(0,0,0,0.1);
-        /* border-bottom: 1px solid lightgray; */
         font-family: 'Source Sans Pro', sans-serif;
     }
     .search{
@@ -1058,11 +1055,11 @@ main{
     box-shadow: 0px 7px 18px 6px rgba(0,0,0,0.1);
     /* box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1); */
     border-radius: 20px;
-    padding: 20px;
-    font-family: 'Source Sans Pro', sans-serif;;
+    padding: 23px;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 form input{
-    width: 300px;
+    width: 310px;
     padding: 10px;
     border-radius: 7px;
     border: 1px solid lightgray;
@@ -1078,6 +1075,7 @@ form button{
 form p{
     color: #8c8c8c;
     text-align: center;
+    margin-top: 15px;
 }
 form img{
     margin-top: -50px;
@@ -1109,7 +1107,7 @@ form img{
         box-shadow: 0px 7px 18px 6px rgba(0,0,0,0.1);
         /* box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1); */
         border-radius: 20px;
-        padding: 20px;
+        padding: 23px;
         font-family: 'Source Sans Pro', sans-serif;;
     }
     form input{
@@ -1157,7 +1155,7 @@ form img{
     box-shadow: 0px 7px 18px 6px rgba(0,0,0,0.1);
     /* box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1); */
     border-radius: 20px;
-    padding: 20px;
+    padding: 23px;
     font-family: 'Source Sans Pro', sans-serif;;
 }
 form input{
@@ -1208,7 +1206,7 @@ form img{
         box-shadow: 0px 7px 18px 6px rgba(0,0,0,0.1);
         /* box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1); */
         border-radius: 20px;
-        padding: 20px;
+        padding: 23px;
         font-family: 'Source Sans Pro', sans-serif;;
     }
     form input{
