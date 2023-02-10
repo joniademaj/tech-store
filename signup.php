@@ -1,18 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/style/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Sign Up</title>
-</head>
-<body>
+<?php include("OOP/Authentication.php"); ?>
+<?php 
+    if(isset($_POST["signup-btn"])){
+        
+        if(isset($_POST["name"]) && !empty($_POST["name"])
+        && isset($_POST["email"]) && !empty($_POST["email"])
+        && isset($_POST["password"]) && !empty($_POST["password"])
+        && isset($_POST["confirm-password"]) && !empty($_POST["confirm-password"])){
 
+            $id = rand(100,999) . strlen($_POST["name"]) . strlen($_POST["email"]);
+            $name = $_POST["name"];   
+            $email = $_POST["email"];
+            $password = $_POST["password"];
+            $confirmPassword = $_POST["confirm-password"];
+    
+            $auth = new Authentication($name, $email, $password);
+            $auth->signUp($id, $name, $email, $password, $confirmPassword);
+        
+        }
+    }
+?>
     <section class="signup">
         <div class="signup-content">
-            <form action="" class="form">
+            <form action="" class="form" method="POST">
                 <div class="signup-header">
                     <img src="images/logo.png" alt="">
                 </div>
@@ -30,7 +39,6 @@
                         <i class="fa fa-envelope"></i>
                     </div>
                     
-                    
                     <div class="inputField">
                         <span>Password</span>
                         <input type="password" name="password" class="password">
@@ -43,8 +51,8 @@
                         <i class="fa fa-lock"></i>
                     </div>
     
-                    <button type="submit" class="login">Log in</button>
-                    <p><a href="login.html" class="have-account">Already Have An Account</a></p>
+                    <button type="submit" name="signup-btn" class="signup-btn">Register</button>
+                    <p><a href="login.php" class="have-account">Already Have An Account</a></p>
                 </div>
                 
             </form>
@@ -57,12 +65,10 @@
         const emailField = document.querySelector(".email");
         const passwordField = document.querySelector(".password");
         const confirmPasswordField = document.querySelector(".confirm-password");
-        const loginBtn = document.querySelector(".login");
+        const signUpBtn = document.querySelector(".signup-btn");
         const form = document.querySelector(".form");            
 
-        form.addEventListener("submit", (e) => {
-            e.preventDefault();
-
+        form.addEventListener("submit", () => {
             validateForm([nameField, emailField, passwordField, confirmPasswordField]);
         })
     </script>

@@ -1,3 +1,22 @@
+<?php include("OOP/Authentication.php"); ?>
+<?php 
+    if(isset($_POST["login-btn"])){
+
+        if(isset($_POST["email"]) && !empty($_POST["email"]) 
+        && isset($_POST["password"]) && !empty($_POST["password"])){
+
+            $name = "j";
+            $email = $_POST["email"];
+            $password = $_POST["password"];
+    
+            $auth = new Authentication($name, $email, $password);
+            $auth->login($email, $password);
+        
+        }
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +30,7 @@
 <body>
     <section class="login">
         <div class="login-content">
-            <form action="" class="form">
+            <form action="" class="form" method="POST">
                 <div class="login-header">
                     <img src="images/logo.png" alt="">
                 </div>
@@ -22,15 +41,14 @@
                         <input type="text" name="email" class="email">
                         <i class="fa fa-envelope"></i>
                     </div>
-                    
-                    
+
                     <div class="inputField">
                         <span>Password</span>
                         <input type="password" name="password" class="password">
                         <i class="fa fa-lock"></i>
                     </div>
     
-                    <button type="submit" class="login">Log in</button>
+                    <button type="submit" name="login-btn" class="login">Log in</button>
                     <p>Forget your password?</p>
                     <p><a href="signup.html" class="create-account">Create An Account</a></p>
                 </div>
@@ -46,9 +64,7 @@
         const loginBtn = document.querySelector(".login");
         const form = document.querySelector(".form");            
 
-        form.addEventListener("submit", (e) => {
-            e.preventDefault();
-
+        form.addEventListener("submit", () => {
             validateForm([emailField, passwordField]);
         })
     </script>

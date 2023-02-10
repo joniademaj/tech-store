@@ -18,10 +18,12 @@ nav{
     padding: 10px;
 }
 .first-nav{
+    height: auto;
     border-bottom: 1px solid lightgray;
 }
 nav ul {
     display: flex;
+    align-items: center;
     list-style-type: none;
     justify-content: space-between;
 }
@@ -42,6 +44,10 @@ nav ul li a{
 .logo img{
     max-width: 100px;
 }
+.log-out{
+    color: red;
+    font-weight: bold;
+}
 .second-header{
     display: flex;
     align-items: center;
@@ -55,6 +61,17 @@ nav ul li a{
     height: 100px;
     align-items: center;
     padding: 10px;
+}
+.user{
+    width: 50px;
+    height: 50px;
+    background-color: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    font-size: 35px;
+    text-transform: uppercase;
 }
 .second-header ul li{
     margin: 25px;
@@ -335,6 +352,9 @@ footer{
     flex-wrap: wrap;
     color: black;
 }
+.signup-btn{
+    cursor: pointer;
+}
 .col{
     margin: 20px;
 }
@@ -522,6 +542,95 @@ main{
     height: 5px;
     background-color: black;
     margin: 5px;
+}
+.add-product-section{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.add-product{
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    padding:10px;
+}
+.add-product-form form{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.add-product-form form input{
+    margin: 5px;
+    width: 500px;
+}
+.add-product-form form button{
+    width: 150px;
+    cursor: pointer;
+}
+.table-img{
+    max-width: 50px;
+}
+.dashboard-table {
+    width: 1000px;
+    margin: 0 auto;
+}
+.dashboard-table th{
+    padding: 5px 20px;
+    border: 1px solid black;
+    background-color: black;
+    color: white;
+}
+.dashboard-table td{
+    padding: 5px 20px;
+    border: 1px solid black;
+}
+.cart a{
+    text-decoration: none;
+    color: black;
+}
+.cart-content{
+    margin-top: 100px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.cart-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 800px;
+    border: 2px solid lightgray;
+    margin: 5px;
+    border-radius: 10px;
+    padding: 10px;
+    min-height: 150px;
+    font-family: var(--font);
+}
+.cart-item .product-name{
+    width: 100px;
+}
+.cart-item img{
+    width: 100px;
+}
+.cart-item .quantity button{
+    width: 50px;
+    height: 50px;
+    border: none;
+    background-color: black;
+    color: white;
+}
+.cart-item .quantity input{
+    height: 50px;
+    width: 50px;
+    text-align: center;
+
 }
 @media screen and (max-width: 1300px){
     .products-side .one{

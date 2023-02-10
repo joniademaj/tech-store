@@ -31,7 +31,6 @@ const validateForm = (fields = []) => {
             }
         }
     }
-
 }
 
 const slider = document.querySelector(".slider");
@@ -47,14 +46,39 @@ let currentImage = 0;
 const leftBtn = document.querySelector(".left-btn");
 const rightBtn = document.querySelector(".right-btn");
 
+const quantityContent = document.querySelectorAll(".quantity");
+
+quantityContent.forEach((section) => {
+    const increment = section.querySelector(".increment");
+    const decrement = section.querySelector(".decrement");
+    const qtyValue = section.querySelector(".qty-value");
+
+    decrement.addEventListener("click", decrementQuantity);
+    increment.addEventListener("click", incrementQuantity);
+
+    function decrementQuantity() {
+        let quantity = parseInt(qtyValue.value);
+        if (quantity > 0) {
+            quantity--;
+            qtyValue.value = quantity;
+        }
+    }
+
+    function incrementQuantity() {
+        let quantity = parseInt(qtyValue.value);
+        quantity++;
+        qtyValue.value = quantity;
+    }
+});
+
 try {
     leftBtn.addEventListener("click", () => {
         sliderProducts.scrollLeft -= 100;
-    })
+    });
     
     rightBtn.addEventListener("click", () => {
         sliderProducts.scrollLeft += 100;
-    })
+    });
 
 
     document.querySelector(".slider-image").innerHTML = `<img src=${folder}${images[currentImage]} />`;
@@ -79,6 +103,7 @@ try {
         }
 
     })
+
 }
 catch(err) {
     console.log(err);
