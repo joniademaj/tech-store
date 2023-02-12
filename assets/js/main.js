@@ -38,7 +38,8 @@ const sliderLeftBtn = document.getElementById("slider-left-btn");
 const sliderRightBtn = document.getElementById("slider-right-btn");
 const sliderProducts = document.querySelector(".slider-product-cards");
 
-let folder = "images/";
+let folder = "../images/";
+
 let images = ["1.png", "2.png", "3.png"];
 let currentImage = 0;
 // var menu = true;
@@ -81,8 +82,8 @@ try {
     });
 
 
-    document.querySelector(".slider-image").innerHTML = `<img src=${folder}${images[currentImage]} />`;
-
+    document.querySelector(".slider-image").innerHTML = `<img src="${folder}${images[currentImage]}" />`;
+    
     sliderLeftBtn.addEventListener("click", () => {
         if(currentImage != 0){
             currentImage--;

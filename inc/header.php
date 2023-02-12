@@ -1,9 +1,8 @@
 <?php 
     ob_start();
     session_start();
-    include "./database/dbConnection.php"; 
-    //include("./OOP/Authentication.php");
-    include("./OOP/Database.php");
+    include "../database/dbConnection.php"; 
+    include("../model/Database.php");
 
     if(isset($_GET["action"]) && $_GET["action"] == "log-out"){
         unset($_SESSION["logged_in"]);
@@ -24,7 +23,7 @@
     <title>Tech Shop</title>
 
     <style>
-        <?php include("./assets/style/style.css"); ?>
+        <?php include("../assets/style/style.css"); ?>
     </style>
 </head>
 <body>
@@ -64,15 +63,17 @@
                 </nav>
                 <div class="second-header">
                     <div class="logo">
-                        <img src="./images/logo.png" alt="">
+                        <img src="../images/logo.png" alt="">
                     </div>
 
                     <nav class="second-nav">
                         <ul class="ul">
                             <li><a href="index.php">HOME</a></li>
-                            <li><a href="view/products.php">PRODUCTS</a></li>
-                            <li><a href="">BRANDS</a></li>
-                            <li><a href="view/dashboard.php">DASHBOARD</a></li>
+                            <li><a href="products.php">PRODUCTS</a></li>
+                            <li><a href="brands.php">BRANDS</a></li>
+                            <?php if(isset($_SESSION["is_admin"]) == "1"): ?>
+                            <li><a href="dashboard.php">DASHBOARD</a></li>
+                            <?php endif; ?>
                             <li><a href="">NEWS</a></li>
                             <li><a href="">SALE</a></li>
                         </ul>
@@ -80,9 +81,15 @@
 
                     <div class="search">
                         <form action="">
-                            <input type="text" placeholder="What you're looking for">
+                            <input type="text" name="q" placeholder="What you're looking for">
                         </form>
                     </div>
+
+                    <?php 
+                        if(isset($_GET["q"])){
+                            $db->search();
+                        }
+                    ?>
 
                     <div class="cart">
                         <a href="cart.php"><i class="fa fa-shopping-cart"></i></a>

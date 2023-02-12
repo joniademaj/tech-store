@@ -1,11 +1,11 @@
 <footer>
     <div class="footer-content">
         <div class="footer-logo">
-            <img src="images/logo.png" alt="">
+            <img src="../images/logo.png" alt="">
         </div>
         <div class="footer-links">
             <div class="col">
-                <h3>Page Linkss asd</h3>
+                <h3>Page Links </h3>
                 <ul>
                     <li><a href="">Home</a></li>
                     <li><a href="">Products</a></li>
@@ -65,7 +65,7 @@
         <i class="fa fa-twitter"></i>
     </div>
 </footer>
-<script src="assets/js/main.js"></script>
+<script src="../assets/js/main.js"></script>
 
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>

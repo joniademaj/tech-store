@@ -72,6 +72,19 @@ nav ul li a{
     border-radius: 50px;
     font-size: 35px;
     text-transform: uppercase;
+    font-family: var(--font);
+}
+.brand-logo img{
+    width: 150px;
+    margin: 20px;
+}
+.brands-content{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    margin-bottom: 200px;
 }
 .second-header ul li{
     margin: 25px;
@@ -142,6 +155,9 @@ nav ul li a{
 }
 .active{
     display: block;
+}
+.edit-img{
+    width: 100px;
 }
 .products-category-content{
     margin-top: 200px;
@@ -572,6 +588,16 @@ main{
     width: 150px;
     cursor: pointer;
 }
+.total-card{
+    width: 300px;
+    border: 2px solid lightgray;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    font-family: var(--font);
+    margin-top: 50px;
+    font-size: 25px;
+}
 .table-img{
     max-width: 50px;
 }
@@ -592,6 +618,18 @@ main{
 .cart a{
     text-decoration: none;
     color: black;
+}
+.pay-btn{
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.payment-btn{
+    padding: 5px 20px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
 }
 .cart-content{
     margin-top: 100px;
@@ -630,7 +668,6 @@ main{
     height: 50px;
     width: 50px;
     text-align: center;
-
 }
 @media screen and (max-width: 1300px){
     .products-side .one{
@@ -924,6 +961,39 @@ main{
     .filters{
         display: none;
     }
+    .cart-item{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 500px;
+        border: 2px solid lightgray;
+        margin: 5px;
+        border-radius: 10px;
+        padding: 10px;
+        min-height: 150px;
+        font-family: var(--font);
+    }
+    .cart-item .product-name{
+        width: 60px;
+    }
+    .cart-item h2{
+        font-size: 15px;
+    }
+    .cart-item img{
+        width: 60px;
+    }
+    .cart-item .quantity button{
+        width: 30px;
+        height: 30px;
+        border: none;
+        background-color: black;
+        color: white;
+    }
+    .cart-item .quantity input{
+        height: 30px;
+        width: 30px;
+        text-align: center;
+    }
 }
 @media screen and (max-width: 800px){
     .products-side .one{
@@ -931,7 +1001,7 @@ main{
     }
     .payment-methods{
         margin-top: 50px;
-        width: 400px; 
+        width: 350px; 
     }
     .payment-methods div{
         padding: 10px;
@@ -962,11 +1032,28 @@ main{
     }
     .footer-content{
         flex-direction: column;
+        align-items: flex-start;
     }
     .footer-links{
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
         /* margin-left: 250px; */
+    }
+    .footer-content img{
+        margin-left: -40px;
+
+    }
+    .cart-item{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 350px;
+        border: 2px solid lightgray;
+        margin: 5px;
+        border-radius: 10px;
+        padding: 10px;
+        min-height: 150px;
+        font-family: var(--font);
     }
 }
 
@@ -1557,7 +1644,7 @@ form img{
         font-size: 20px;
     }
     .product-info{
-        display: none;  
+        display: block;  
     }
     .search{
         display: none;
